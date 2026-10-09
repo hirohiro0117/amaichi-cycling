@@ -15,11 +15,12 @@ const events = [
     location: "苓北町富岡城（Day1）・上天草市姫戸（Day2）",
     fee: "80km 9,000円（1日）／18,000円（2日）｜140km 12,000円",
     level: "全レベル対応",
-    distance: "140km・80km",
+    distance: "140km・80km・40km・30km",
     color: "from-sky-500 to-blue-700",
     emoji: "🏆",
     badge: "公式イベント",
-    link: "https://amakusa-cycle-granfondo.jp",
+    guest: "ゲスト：渡辺航先生（弱虫ペダル作者）Day1参加予定",
+    link: "https://www.sportsentry.ne.jp/event/t/106237",
     ended: false,
   },
   {
@@ -101,7 +102,7 @@ const routes = [
     time: "8〜10時間",
     difficulty: "★★★ 上級者向け",
     difficultyColor: "text-red-600",
-    description: "ナショナルサイクルルートの全コース。三角港をスタートし牛深港まで152km。東シナ海の大パノラマ・崎津集落・牛深ハイヤ大橋など天草の全てを体感できます。",
+    description: "ナショナルサイクルルートの全コース。宇城市三角駅をスタートし牛深港まで152km・所要10時間。道の駅さんぱーる・富岡港・崎津集落・牛深ハイヤ大橋など天草の全てを体感できます。",
     color: "from-violet-400 to-indigo-600",
     emoji: "🌊",
     tag: "ナショナルルート152km",
@@ -148,10 +149,10 @@ const tourismSpots = [
   {
     category: "STOP BY｜立ち寄る",
     items: [
-      "牛深ハイヤ大橋",
-      "富岡城（スタート地点）",
-      "天草五橋（日本の道100選）",
-      "イルカウォッチング（通年）",
+      "道の駅 上天草さんぱーる",
+      "ミオ カミーノ天草（カフェ休憩）",
+      "崎津集落ガイダンスセンター",
+      "道の駅 うしぶか海彩館（ゴール）",
     ],
     emoji: "📍",
     color: "bg-teal-50 border-teal-200",
@@ -230,9 +231,12 @@ export default function Home() {
           <div className="mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 text-white">
             <div className="flex items-center gap-3">
               <span className="rounded-full bg-yellow-400 px-3 py-1 text-xs font-bold text-ocean-900">NEW</span>
-              <span className="text-sm font-semibold">
-                天草一周！あまいちグランフォンド2026 — エントリー受付中
-              </span>
+              <div>
+                <span className="text-sm font-semibold">
+                  天草一周！あまいちグランフォンド2026 — エントリー受付中
+                </span>
+                <span className="ml-2 text-xs text-ocean-200">⭐ 渡辺航先生（弱虫ペダル作者）ゲスト参加予定</span>
+              </div>
             </div>
             <a
               href="https://amakusa-cycle-granfondo.jp"
@@ -334,6 +338,12 @@ export default function Home() {
                         <dt>💴</dt>
                         <dd className={event.ended ? "text-slate-400" : "font-semibold text-ocean-700"}>{event.fee}</dd>
                       </div>
+                      {"guest" in event && event.guest && !event.ended && (
+                        <div className="flex items-start gap-2 rounded-lg bg-yellow-50 px-2 py-1.5">
+                          <dt>⭐</dt>
+                          <dd className="text-xs font-semibold text-yellow-800">{(event as {guest: string}).guest}</dd>
+                        </div>
+                      )}
                     </dl>
                     <div className="mt-4">
                       {event.ended ? (
@@ -759,6 +769,84 @@ export default function Home() {
           </div>
         </section>
 
+        {/* リンク集 */}
+        <section id="links" className="py-16 px-4 sm:px-6 bg-ocean-50">
+          <div className="mx-auto max-w-4xl">
+            <div className="text-center mb-10">
+              <span className="inline-block rounded-full bg-ocean-100 px-4 py-1 text-sm font-semibold text-ocean-700 mb-3">
+                Links
+              </span>
+              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+                関連リンク集
+              </h2>
+              <p className="mt-3 text-slate-600">
+                天草サイクリングに役立つ公式サイトをまとめました。
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                {
+                  name: "VISITあまくさプロジェクト",
+                  desc: "天草の観光情報公式サイト。ルート・グルメ・宿泊・体験を網羅。",
+                  emoji: "🌊",
+                  color: "border-sky-200 bg-sky-50",
+                  url: "https://visitamakusa.com/",
+                },
+                {
+                  name: "あまいちグランフォンド2026 公式",
+                  desc: "2026年12月12日・13日開催。スポーツエントリーでオンライン申込受付中。",
+                  emoji: "🏆",
+                  color: "border-blue-200 bg-blue-50",
+                  url: "https://amakusa-cycle-granfondo.jp/",
+                },
+                {
+                  name: "グランフォンド エントリー（スポーツエントリー）",
+                  desc: "グランフォンド2026の参加申込ページ。140km・80km・40km・30km。",
+                  emoji: "📝",
+                  color: "border-indigo-200 bg-indigo-50",
+                  url: "https://www.sportsentry.ne.jp/event/t/106237",
+                },
+                {
+                  name: "天草・北薩ぐるり旅",
+                  desc: "北薩・天草広域観光ガイド。旅のプランや季節ごとの見どころを紹介。",
+                  emoji: "🗺️",
+                  color: "border-teal-200 bg-teal-50",
+                  url: "https://gururitabi.com/index.html",
+                },
+                {
+                  name: "くまもとスポーツナビ｜あまいちコース",
+                  desc: "あまいち152kmコースの公式情報。スタート三角駅〜ゴール牛深港の全通過スポット。",
+                  emoji: "🚴",
+                  color: "border-emerald-200 bg-emerald-50",
+                  url: "https://sports.kumamoto.guide/cycling-courses/detail/2934ffd0-a554-46ac-9991-bf8988080815",
+                },
+                {
+                  name: "ナショナルサイクルルート あまいち 公式note",
+                  desc: "EAT・STORY・ROUTE・STOP BYなど6カテゴリで天草の魅力を発信中。",
+                  emoji: "📝",
+                  color: "border-amber-200 bg-amber-50",
+                  url: "https://note.com/kumamoto_amaichi",
+                },
+              ].map((link) => (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-start gap-4 rounded-2xl border p-5 transition hover:shadow-md hover:-translate-y-0.5 ${link.color}`}
+                >
+                  <span className="text-3xl shrink-0">{link.emoji}</span>
+                  <div>
+                    <p className="font-bold text-slate-800 text-sm leading-snug">{link.name}</p>
+                    <p className="mt-1 text-xs text-slate-600 leading-relaxed">{link.desc}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
       </main>
 
       {/* ⑧ フッター */}
@@ -801,6 +889,7 @@ export default function Home() {
                   { label: 'グランフォンドコース', href: '#routes' },
                   { label: 'クラブ紹介', href: '#about' },
                   { label: '天草観光情報', href: '#tourism' },
+                  { label: '関連リンク集', href: '#links' },
                 ].map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className="text-sm text-ocean-300 transition hover:text-white">

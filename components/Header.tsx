@@ -8,6 +8,7 @@ const navItems = [
   { label: 'ルート', href: '#routes' },
   { label: 'クラブ紹介', href: '#about' },
   { label: '観光情報', href: '#tourism' },
+  { label: 'リンク集', href: '#links' },
   { label: 'お問い合わせ', href: '#contact' },
 ]
 
