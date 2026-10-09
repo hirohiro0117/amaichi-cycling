@@ -654,6 +654,7 @@ export default function Home() {
               </p>
               <div className="mt-4 flex gap-3">
                 <a href="https://amaichi.jpn.org/" target="_blank" rel="noopener noreferrer" className="text-xs text-ocean-400 underline hover:text-ocean-300">クラブ公式サイト</a>
+                <a href="https://note.com/kumamoto_amaichi" target="_blank" rel="noopener noreferrer" className="text-xs text-ocean-400 underline hover:text-ocean-300">note</a>
                 <span className="text-ocean-700">|</span>
                 <a href="https://visitamakusa.com" target="_blank" rel="noopener noreferrer" className="text-xs text-ocean-400 underline hover:text-ocean-300">VISITあまくさ</a>
                 <span className="text-ocean-700">|</span>
@@ -689,6 +690,11 @@ export default function Home() {
                 <li>
                   <a href="https://amaichi.jpn.org/" target="_blank" rel="noopener noreferrer" className="text-sm text-ocean-300 transition hover:text-white">
                     公式サイト（amaichi.jpn.org）
+                  </a>
+                </li>
+                <li>
+                  <a href="https://note.com/kumamoto_amaichi" target="_blank" rel="noopener noreferrer" className="text-sm text-ocean-300 transition hover:text-white">
+                    note（活動記録）
                   </a>
                 </li>
                 {[
