@@ -935,9 +935,6 @@ export default function Home() {
 
           <div className="mt-10 border-t border-ocean-800 pt-6 text-center text-xs text-ocean-500">
             © 2026 あまいちサイクリングルート. All rights reserved.
-            <span className="mx-2">|</span>
-            Supported by
-            <a href="https://visitamakusa.com" target="_blank" rel="noopener noreferrer" className="ml-1 underline hover:text-ocean-300">VISITあまくさプロジェクト</a>
           </div>
         </div>
       </footer>
