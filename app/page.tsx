@@ -926,9 +926,6 @@ export default function Home() {
               </ul>
               <div className="mt-4 space-y-1">
                 <p className="text-xs text-ocean-400">運営：あまいちサイクリングルート</p>
-                <p className="text-xs text-ocean-400">熊本県天草市</p>
-                <p className="text-xs text-ocean-400">📞 090-3323-1198（植田）</p>
-                <p className="text-xs text-ocean-400">📞 090-4516-4890（長友）</p>
               </div>
             </div>
           </div>
