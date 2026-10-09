@@ -3,7 +3,7 @@ import Link from "next/link";
 
 /* ============================================================
    イベント・ルートデータ（将来 Supabase から取得に差し替え予定）
-   参考: visitamakusa.com / sports.kumamoto.guide
+   参考: amaichi.jpn.org / visitamakusa.com / sports.kumamoto.guide
    ============================================================ */
 
 const events = [
@@ -11,11 +11,11 @@ const events = [
     id: 1,
     title: "天草一周！あまいちグランフォンド2026",
     date: "2026年12月12日（土）・13日（日）",
-    time: "両日開催・詳細はエントリー後に通知",
-    location: "天草市内（スタート・ゴール地点調整中）",
-    fee: "SportEntryにてオンライン申込",
+    time: "Day1: 苓北町富岡城スタート / Day2: 上天草市姫戸統括支所スタート",
+    location: "苓北町富岡城（Day1）・上天草市姫戸（Day2）",
+    fee: "80km 9,000円（1日）／18,000円（2日）｜140km 12,000円",
     level: "全レベル対応",
-    distance: "140km・80km・40km（Day1）",
+    distance: "140km・80km",
     color: "from-sky-500 to-blue-700",
     emoji: "🏆",
     badge: "公式イベント",
@@ -23,31 +23,31 @@ const events = [
   },
   {
     id: 2,
-    title: "天草五橋サンライズライド",
-    date: "2026年11月16日（日）",
-    time: "5:30集合 / 6:00スタート",
-    location: "松島総合センター前 駐車場",
-    fee: "無料",
+    title: "あまくさ島旅サイクリング",
+    date: "2026年11月（開催日調整中）",
+    time: "詳細はお知らせにて告知",
+    location: "天草各地（ガイド付き）",
+    fee: "参加費別途",
     level: "初心者歓迎",
-    distance: "約30km",
+    distance: "ガイド付き",
     color: "from-orange-400 to-sky-500",
-    emoji: "🌅",
-    badge: "初心者向け",
-    link: null,
+    emoji: "🏝️",
+    badge: "島旅体験",
+    link: "https://amaichi.jpn.org/",
   },
   {
     id: 3,
-    title: "崎津・世界遺産ライド",
-    date: "2026年11月30日（日）",
-    time: "8:00集合 / 8:30スタート",
-    location: "本渡港 フェリーターミナル前",
-    fee: "500円（保険料）",
-    level: "中級者向け",
-    distance: "約80km",
+    title: "行ってみゅ～会（気軽なポタリング）",
+    date: "毎月開催（日程はSNS・LINEで告知）",
+    time: "朝集合・現地解散",
+    location: "天草各地（毎回テーマスポットへ）",
+    fee: "無料",
+    level: "初心者歓迎",
+    distance: "20〜50km程度",
     color: "from-teal-400 to-emerald-600",
-    emoji: "⛪",
-    badge: "世界遺産コース",
-    link: null,
+    emoji: "🚲",
+    badge: "気軽に参加",
+    link: "https://amaichi.jpn.org/",
   },
 ];
 
@@ -55,14 +55,14 @@ const routes = [
   {
     id: 1,
     name: "天草五橋・松島コース",
-    distance: "40km",
+    distance: "50km",
     time: "2〜3時間",
     difficulty: "★☆☆ 初心者向け",
     difficultyColor: "text-emerald-600",
-    description: "グランフォンドDay1の40kmコース。天草の玄関口・五橋を渡り、松島の絶景を巡る入門ルート。平坦で走りやすく初めての方に最適です。",
+    description: "天草の玄関口・五橋を渡り、松島の絶景を巡る入門ルート。天草四郎サイクリングフェスタでも人気の定番コースです。",
     color: "from-sky-300 to-blue-500",
     emoji: "🌉",
-    tag: "グランフォンド40km",
+    tag: "定番コース",
   },
   {
     id: 2,
@@ -170,10 +170,13 @@ export default function Home() {
               <p className="mb-4 text-sm font-medium tracking-widest text-ocean-100 sm:text-base">
                 熊本県 天草からはじまる
               </p>
-              <h1 className="mb-2 text-4xl font-black leading-tight tracking-tight sm:text-5xl md:text-6xl">
+              <h1 className="mb-3 text-4xl font-black leading-tight tracking-tight sm:text-5xl md:text-6xl">
                 天草を、<br className="sm:hidden" />
                 自転車で楽しもう。
               </h1>
+              <p className="mb-2 text-base font-medium text-cyan-100 sm:text-lg italic">
+                ペダルを回した数だけ、みえる景色がある。
+              </p>
               <p className="mb-2 text-lg font-bold text-cyan-200 sm:text-xl">
                 天草一周！あまいちグランフォンド2026
               </p>
@@ -400,8 +403,24 @@ export default function Home() {
                 あまいちサイクリングクラブとは
               </h2>
               <p className="mt-3 text-slate-600">
-                「天草一周（あまいち）」を合言葉に、天草のサイクリング文化を盛り上げるクラブです。
+                「天草一周（あまいち）」を合言葉に、2013年から活動するサイクリングクラブです。
               </p>
+            </div>
+
+            {/* 活動実績バナー */}
+            <div className="mb-8 grid grid-cols-3 gap-4 sm:grid-cols-3">
+              {[
+                { num: "10", unit: "回", label: "天草四郎サイクリングフェスタ開催" },
+                { num: "300", unit: "名+", label: "最大参加者数" },
+                { num: "140", unit: "km", label: "グランフォンド最長コース" },
+              ].map((stat) => (
+                <div key={stat.label} className="rounded-2xl bg-ocean-50 p-4 text-center">
+                  <div className="text-2xl font-black text-ocean-700 sm:text-3xl">
+                    {stat.num}<span className="text-lg">{stat.unit}</span>
+                  </div>
+                  <div className="mt-1 text-xs text-slate-600 leading-tight">{stat.label}</div>
+                </div>
+              ))}
             </div>
 
             <div className="rounded-3xl bg-gradient-to-br from-ocean-50 to-cyan-50 p-8 sm:p-10">
@@ -411,8 +430,8 @@ export default function Home() {
                     <span className="text-2xl">🎯</span> クラブの目的
                   </h3>
                   <p className="text-sm leading-relaxed text-slate-700">
-                    天草の豊かな自然・世界遺産・食文化を、サイクリングという体験を通じて多くの方に知ってもらうこと。
-                    VISITあまくさプロジェクトと連携し、天草の魅力を国内外に発信します。
+                    天草の隠れたスポットを自転車のスピードで巡り、サイクリングを通じて天草を全国へ発信すること。
+                    VISITあまくさプロジェクトと連携し、天草の魅力を国内外に届けます。
                   </p>
                 </div>
                 <div>
@@ -420,10 +439,10 @@ export default function Home() {
                     <span className="text-2xl">🚵</span> 活動内容
                   </h3>
                   <ul className="space-y-1.5 text-sm text-slate-700">
-                    <li className="flex items-start gap-2"><span>•</span>あまいちグランフォンドの普及・サポート</li>
-                    <li className="flex items-start gap-2"><span>•</span>月1〜2回の定例サイクリング</li>
-                    <li className="flex items-start gap-2"><span>•</span>初心者向けサイクリング教室</li>
-                    <li className="flex items-start gap-2"><span>•</span>天草サイクリングルート情報の発信</li>
+                    <li className="flex items-start gap-2"><span>•</span>天草四郎サイクリングフェスタの企画・運営（第1〜10回）</li>
+                    <li className="flex items-start gap-2"><span>•</span>あまいちグランフォンドのサポート</li>
+                    <li className="flex items-start gap-2"><span>•</span>あまくさ島旅サイクリング（ガイド付き）</li>
+                    <li className="flex items-start gap-2"><span>•</span>行ってみゅ～会（気軽なポタリング）</li>
                   </ul>
                 </div>
                 <div>
@@ -431,7 +450,7 @@ export default function Home() {
                     <span className="text-2xl">👥</span> 参加対象
                   </h3>
                   <p className="text-sm leading-relaxed text-slate-700">
-                    天草在住・在勤の方、天草が好きな方、サイクリングに興味のある方ならどなたでも歓迎！
+                    小学生以上（未成年は保護者同伴）、天草在住・在勤・天草が好きな方ならどなたでも歓迎！
                     年齢・レベル・性別不問。ロードバイクがなくてもOKです。
                   </p>
                 </div>
@@ -441,9 +460,32 @@ export default function Home() {
                   </h3>
                   <p className="text-sm leading-relaxed text-slate-700">
                     まずはLINE公式アカウントを友だち追加してください。
-                    グランフォンドの練習会や地域ライドの情報を配信しています。
-                    グランフォンド本番はSportEntryからエントリー可能です。
+                    グランフォンドはSportEntryでオンライン申込。
+                    その他イベントのお問い合わせは下記へどうぞ。
                   </p>
+                </div>
+              </div>
+
+              {/* 過去大会実績 */}
+              <div className="mt-8 border-t border-ocean-200 pt-6">
+                <h3 className="mb-4 flex items-center gap-2 text-base font-bold text-ocean-800">
+                  <span className="text-xl">📅</span> 過去の大会実績（天草四郎サイクリングフェスタ）
+                </h3>
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 text-xs text-slate-600">
+                  {[
+                    "第10回 2024年11月",
+                    "第9回 2023年12月",
+                    "第8回 2022年12月",
+                    "第7回 2019年12月",
+                    "第6回 2018年11月",
+                    "第5回 2017年12月",
+                    "第4回 開催",
+                    "第3回 開催",
+                  ].map((record) => (
+                    <div key={record} className="rounded-lg bg-white px-3 py-2 text-center shadow-sm">
+                      {record}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -578,32 +620,11 @@ export default function Home() {
                 「天草一周（あまいち）」を合言葉に、VISITあまくさプロジェクトと連携して天草の魅力を発信します。
               </p>
               <div className="mt-4 flex gap-3">
-                <a
-                  href="https://visitamakusa.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-ocean-400 underline hover:text-ocean-300"
-                >
-                  VISITあまくさ
-                </a>
+                <a href="https://amaichi.jpn.org/" target="_blank" rel="noopener noreferrer" className="text-xs text-ocean-400 underline hover:text-ocean-300">クラブ公式サイト</a>
                 <span className="text-ocean-700">|</span>
-                <a
-                  href="https://amakusa-cycle-granfondo.jp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-ocean-400 underline hover:text-ocean-300"
-                >
-                  グランフォンド公式
-                </a>
+                <a href="https://visitamakusa.com" target="_blank" rel="noopener noreferrer" className="text-xs text-ocean-400 underline hover:text-ocean-300">VISITあまくさ</a>
                 <span className="text-ocean-700">|</span>
-                <a
-                  href="https://sports.kumamoto.guide"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-ocean-400 underline hover:text-ocean-300"
-                >
-                  くまもっと旅スポ
-                </a>
+                <a href="https://amakusa-cycle-granfondo.jp" target="_blank" rel="noopener noreferrer" className="text-xs text-ocean-400 underline hover:text-ocean-300">グランフォンド公式</a>
               </div>
             </div>
 
@@ -632,8 +653,12 @@ export default function Home() {
                 お問い合わせ
               </h3>
               <ul className="space-y-2">
+                <li>
+                  <a href="https://amaichi.jpn.org/" target="_blank" rel="noopener noreferrer" className="text-sm text-ocean-300 transition hover:text-white">
+                    公式サイト（amaichi.jpn.org）
+                  </a>
+                </li>
                 {[
-                  'お問い合わせ（準備中）',
                   '利用規約（準備中）',
                   'プライバシーポリシー（準備中）',
                 ].map((label) => (
@@ -642,9 +667,11 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-4">
+              <div className="mt-4 space-y-1">
                 <p className="text-xs text-ocean-400">運営：あまいちサイクリングクラブ</p>
                 <p className="text-xs text-ocean-400">熊本県天草市</p>
+                <p className="text-xs text-ocean-400">📞 090-3323-1198（植田）</p>
+                <p className="text-xs text-ocean-400">📞 090-4516-4890（長友）</p>
               </div>
             </div>
           </div>
