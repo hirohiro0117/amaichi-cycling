@@ -425,7 +425,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ⑤ あまいちサイクリングクラブ紹介 */}
+        {/* ⑤ あまいちサイクリングルート紹介 */}
         <section id="about" className="py-16 px-4 sm:px-6 bg-white">
           <div className="mx-auto max-w-4xl">
             <div className="text-center mb-10">
@@ -433,10 +433,10 @@ export default function Home() {
                 About
               </span>
               <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-                あまいちサイクリングクラブとは
+                あまいちサイクリングルートとは
               </h2>
               <p className="mt-3 text-slate-600">
-                「天草一周（あまいち）」を合言葉に、2013年から活動するサイクリングクラブです。
+                「天草一周（あまいち）」を合言葉に、2013年から活動するサイクリングルートガイドです。
               </p>
             </div>
 
@@ -644,12 +644,12 @@ export default function Home() {
                   🚴
                 </div>
                 <div>
-                  <div className="font-bold text-white">あまいちサイクリングクラブ</div>
+                  <div className="font-bold text-white">あまいちサイクリングルート</div>
                   <div className="text-xs text-ocean-300">天草一周 × サイクリング</div>
                 </div>
               </div>
               <p className="text-sm leading-relaxed text-ocean-300">
-                熊本県天草地域を拠点に活動するサイクリングクラブ。
+                熊本県天草地域のサイクリングルート情報サイト。
                 「天草一周（あまいち）」を合言葉に、VISITあまくさプロジェクトと連携して天草の魅力を発信します。
               </p>
               <div className="mt-4 flex gap-3">
@@ -701,7 +701,7 @@ export default function Home() {
                 ))}
               </ul>
               <div className="mt-4 space-y-1">
-                <p className="text-xs text-ocean-400">運営：あまいちサイクリングクラブ</p>
+                <p className="text-xs text-ocean-400">運営：あまいちサイクリングルート</p>
                 <p className="text-xs text-ocean-400">熊本県天草市</p>
                 <p className="text-xs text-ocean-400">📞 090-3323-1198（植田）</p>
                 <p className="text-xs text-ocean-400">📞 090-4516-4890（長友）</p>
@@ -710,7 +710,7 @@ export default function Home() {
           </div>
 
           <div className="mt-10 border-t border-ocean-800 pt-6 text-center text-xs text-ocean-500">
-            © 2026 あまいちサイクリングクラブ. All rights reserved.
+            © 2026 あまいちサイクリングルート. All rights reserved.
             <span className="mx-2">|</span>
             Supported by
             <a href="https://visitamakusa.com" target="_blank" rel="noopener noreferrer" className="ml-1 underline hover:text-ocean-300">VISITあまくさプロジェクト</a>
