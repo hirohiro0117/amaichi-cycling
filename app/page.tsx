@@ -170,9 +170,8 @@ export default function Home() {
               <p className="mb-4 text-sm font-medium tracking-widest text-ocean-100 sm:text-base">
                 熊本県 天草からはじまる
               </p>
-              <h1 className="mb-3 text-4xl font-black leading-tight tracking-tight sm:text-5xl md:text-6xl">
-                天草を、<br className="sm:hidden" />
-                自転車で楽しもう。
+              <h1 className="mb-3 text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+                天草を、自転車で楽しもう。
               </h1>
               <p className="mb-2 text-base font-medium text-cyan-100 sm:text-lg italic">
                 ペダルを回した数だけ、みえる景色がある。
