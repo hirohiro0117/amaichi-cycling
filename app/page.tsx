@@ -97,61 +97,65 @@ const routes = [
   {
     id: 3,
     name: "天草一周フルコース",
-    distance: "140km",
-    time: "7〜9時間",
+    distance: "152km",
+    time: "8〜10時間",
     difficulty: "★★★ 上級者向け",
     difficultyColor: "text-red-600",
-    description: "グランフォンドDay1・Day2のメインコース。天草下島を一周し、東シナ海の大パノラマと牛深ハイヤ大橋など天草の全てを体感できます。",
+    description: "ナショナルサイクルルートの全コース。三角港をスタートし牛深港まで152km。東シナ海の大パノラマ・崎津集落・牛深ハイヤ大橋など天草の全てを体感できます。",
     color: "from-violet-400 to-indigo-600",
     emoji: "🌊",
-    tag: "グランフォンド140km",
+    tag: "ナショナルルート152km",
   },
 ];
 
 const tourismSpots = [
   {
-    category: "観光スポット",
-    items: [
-      "崎津集落（ユネスコ世界文化遺産）",
-      "天草五橋（日本の道100選）",
-      "イルカウォッチング（通年）",
-      "牛深ハイヤ大橋",
-    ],
-    emoji: "🏛️",
-    color: "bg-sky-50 border-sky-200",
-  },
-  {
-    category: "飲食店・グルメ",
+    category: "EAT｜味わう",
     items: [
       "天草大王（地鶏料理）",
       "海鮮丼・活き造り",
       "天草ちゃんぽん",
       "タコ・伊勢えび料理",
     ],
-    emoji: "🍜",
+    emoji: "🍽️",
     color: "bg-orange-50 border-orange-200",
+    noteLink: "https://note.com/kumamoto_amaichi",
   },
   {
-    category: "宿泊施設",
+    category: "STORY｜物語に出会う",
     items: [
-      "天草グランドホテル",
-      "民宿・ペンション多数",
-      "ライダーズハウス",
-      "キャンプ場（天草各地）",
+      "崎津集落（ユネスコ世界文化遺産）",
+      "天草キリシタンの歴史",
+      "天草四郎ゆかりの地",
+      "羊角湾の自然と海の恵み",
     ],
-    emoji: "🛏️",
+    emoji: "📖",
+    color: "bg-sky-50 border-sky-200",
+    noteLink: "https://note.com/kumamoto_amaichi",
+  },
+  {
+    category: "TAKE HOME｜持ち帰る",
+    items: [
+      "あか巻（牛深の縁起菓子）",
+      "天草の塩・海産物加工品",
+      "天草陶磁器・工芸品",
+      "くまもとサイクルグッズ",
+    ],
+    emoji: "🎁",
+    color: "bg-pink-50 border-pink-200",
+    noteLink: "https://note.com/kumamoto_amaichi",
+  },
+  {
+    category: "STOP BY｜立ち寄る",
+    items: [
+      "牛深ハイヤ大橋",
+      "富岡城（スタート地点）",
+      "天草五橋（日本の道100選）",
+      "イルカウォッチング（通年）",
+    ],
+    emoji: "📍",
     color: "bg-teal-50 border-teal-200",
-  },
-  {
-    category: "アクセス・交通",
-    items: [
-      "熊本港↔天草 フェリー約60分",
-      "三角駅↔天草 バス約40分",
-      "熊本IC→松島 車約60分",
-      "阿蘇くまもと空港から約90分",
-    ],
-    emoji: "⛴️",
-    color: "bg-violet-50 border-violet-200",
+    noteLink: "https://note.com/kumamoto_amaichi",
   },
 ];
 
@@ -183,16 +187,16 @@ export default function Home() {
 
             <div className="relative z-10 px-4 text-center text-white max-w-4xl mx-auto">
               <p className="mb-2 text-xs font-semibold tracking-[0.3em] text-cyan-200 sm:text-sm">
-                VISITあまくさプロジェクト 連携
+                ナショナルサイクルルート
               </p>
               <p className="mb-4 text-sm font-medium tracking-widest text-ocean-100 sm:text-base">
-                熊本県 天草からはじまる
+                三角港 → 牛深港　全長152km
               </p>
               <h1 className="mb-3 text-4xl font-black leading-tight tracking-tight sm:text-5xl xl:text-6xl">
                 天草を、自転車で楽しもう。
               </h1>
               <p className="mb-2 text-base font-medium text-cyan-100 sm:text-lg italic">
-                ペダルを回した数だけ、みえる景色がある。
+                走る道から、また帰ってきたくなる道へ。
               </p>
               <p className="mb-2 text-lg font-bold text-cyan-200 sm:text-xl">
                 天草一周！あまいちグランフォンド2026
@@ -237,6 +241,27 @@ export default function Home() {
               className="shrink-0 rounded-full bg-white px-5 py-2 text-sm font-bold text-ocean-700 transition hover:bg-ocean-50"
             >
               公式サイトを見る →
+            </a>
+          </div>
+        </section>
+
+        {/* 秋冬シーズンバナー */}
+        <section className="bg-amber-50 border-y border-amber-200 py-4 px-4">
+          <div className="mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🍂</span>
+              <div>
+                <p className="text-sm font-semibold text-amber-900">秋冬の天草を走ろう</p>
+                <p className="text-xs text-amber-700">ツルの飛来・温泉・牛深のあか巻き — 今だけの出会いがある</p>
+              </div>
+            </div>
+            <a
+              href="https://note.com/kumamoto_amaichi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 rounded-full bg-amber-600 px-5 py-2 text-sm font-bold text-white transition hover:bg-amber-700"
+            >
+              noteで読む →
             </a>
           </div>
         </section>
@@ -445,7 +470,7 @@ export default function Home() {
               {[
                 { num: "10", unit: "回", label: "天草四郎サイクリングフェスタ開催" },
                 { num: "300", unit: "名+", label: "最大参加者数" },
-                { num: "140", unit: "km", label: "グランフォンド最長コース" },
+                { num: "152", unit: "km", label: "ナショナルサイクルルート全長" },
               ].map((stat) => (
                 <div key={stat.label} className="rounded-2xl bg-ocean-50 p-4 text-center">
                   <div className="text-2xl font-black text-ocean-700 sm:text-3xl">
@@ -558,7 +583,7 @@ export default function Home() {
                     <span className="text-2xl">{spot.emoji}</span>
                     <h3 className="font-bold text-slate-800">{spot.category}</h3>
                   </div>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 mb-4">
                     {spot.items.map((item) => (
                       <li key={item} className="flex items-start gap-1.5 text-sm text-slate-700">
                         <span className="mt-0.5 shrink-0 text-ocean-400">▸</span>
@@ -566,6 +591,14 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
+                  <a
+                    href={spot.noteLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-semibold text-ocean-600 underline hover:text-ocean-800"
+                  >
+                    noteで詳しく読む →
+                  </a>
                 </div>
               ))}
             </div>
@@ -645,7 +678,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="font-bold text-white">あまいちサイクリングルート</div>
-                  <div className="text-xs text-ocean-300">天草一周 × サイクリング</div>
+                  <div className="text-xs text-ocean-300">ナショナルサイクルルート</div>
                 </div>
               </div>
               <p className="text-sm leading-relaxed text-ocean-300">
