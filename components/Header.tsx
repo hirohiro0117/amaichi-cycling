@@ -20,9 +20,11 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* ロゴ・サイト名 */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-ocean-600 text-white text-xl font-bold">
-              🚴
-            </div>
+            <img
+              src="https://assets.st-note.com/production/uploads/images/319910730/profile_8aa1ec131263959f0830ee34a5319cc5.jpg"
+              alt="あまいちサイクリングルート"
+              className="h-10 w-10 rounded-full object-cover"
+            />
             <div>
               <div className="text-sm font-bold leading-tight text-ocean-900 sm:text-base">
                 あまいちサイクリングルート

@@ -767,9 +767,11 @@ export default function Home() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-ocean-600 text-xl">
-                  🚴
-                </div>
+                <img
+                  src="https://assets.st-note.com/production/uploads/images/319910730/profile_8aa1ec131263959f0830ee34a5319cc5.jpg"
+                  alt="あまいちサイクリングルート"
+                  className="h-10 w-10 rounded-full object-cover"
+                />
                 <div>
                   <div className="font-bold text-white">あまいちサイクリングルート</div>
                   <div className="text-xs text-ocean-300">ナショナルサイクルルート</div>
