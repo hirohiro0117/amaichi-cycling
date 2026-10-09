@@ -621,6 +621,100 @@ export default function Home() {
           </div>
         </section>
 
+        {/* note最新記事 */}
+        <section className="py-16 px-4 sm:px-6 bg-white">
+          <div className="mx-auto max-w-6xl">
+            <div className="text-center mb-10">
+              <span className="inline-block rounded-full bg-amber-100 px-4 py-1 text-sm font-semibold text-amber-700 mb-3">
+                note
+              </span>
+              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+                公式note 最新記事
+              </h2>
+              <p className="mt-3 text-slate-600">
+                天草を走る・食べる・出会う。旅の物語を発信中。
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  title: "秋冬の天草を走ろう。季節の味覚と温泉、そして空を渡るツルに出会う旅。",
+                  category: "ROUTE｜走る",
+                  emoji: "🍂",
+                  color: "bg-amber-50 border-amber-200",
+                  labelColor: "text-amber-700 bg-amber-100",
+                  url: "https://note.com/kumamoto_amaichi/m/m9e4f87224c94",
+                },
+                {
+                  title: "漁師町で出会う、縁起菓子「あか巻」牛深のくらしが育くむ物語。",
+                  category: "EAT｜味わう",
+                  emoji: "🍡",
+                  color: "bg-orange-50 border-orange-200",
+                  labelColor: "text-orange-700 bg-orange-100",
+                  url: "https://note.com/kumamoto_amaichi/m/mff841257e87d",
+                },
+                {
+                  title: "海の中に咲く花。羊角湾が育む、色とりどりの恵み。",
+                  category: "STORY｜物語に出会う",
+                  emoji: "🌺",
+                  color: "bg-sky-50 border-sky-200",
+                  labelColor: "text-sky-700 bg-sky-100",
+                  url: "https://note.com/kumamoto_amaichi/m/m701bc9cad304",
+                },
+                {
+                  title: "道の先に、まだ知らない天草が待っている。",
+                  category: "ROUTE｜走る",
+                  emoji: "🛤️",
+                  color: "bg-teal-50 border-teal-200",
+                  labelColor: "text-teal-700 bg-teal-100",
+                  url: "https://note.com/kumamoto_amaichi/m/m9e4f87224c94",
+                },
+                {
+                  title: "旅は、どこからでも始められる。― あなただけの物語に出会う12の入口 ―",
+                  category: "ROUTE｜走る",
+                  emoji: "🗺️",
+                  color: "bg-indigo-50 border-indigo-200",
+                  labelColor: "text-indigo-700 bg-indigo-100",
+                  url: "https://note.com/kumamoto_amaichi/m/m9e4f87224c94",
+                },
+              ].map((article) => (
+                <a
+                  key={article.title}
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex flex-col rounded-2xl border p-5 transition hover:shadow-md hover:-translate-y-0.5 ${article.color}`}
+                >
+                  <div className="mb-3 flex items-center gap-2">
+                    <span className="text-2xl">{article.emoji}</span>
+                    <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${article.labelColor}`}>
+                      {article.category}
+                    </span>
+                  </div>
+                  <p className="flex-1 text-sm font-semibold leading-relaxed text-slate-800">
+                    {article.title}
+                  </p>
+                  <p className="mt-3 text-xs font-semibold text-ocean-600">
+                    記事を読む →
+                  </p>
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-8 text-center">
+              <a
+                href="https://note.com/kumamoto_amaichi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-ocean-400 hover:text-ocean-700"
+              >
+                noteで全記事を見る →
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* ⑦ LINE公式アカウント */}
         <section id="line" className="py-16 px-4 sm:px-6 bg-white">
           <div className="mx-auto max-w-2xl text-center">
