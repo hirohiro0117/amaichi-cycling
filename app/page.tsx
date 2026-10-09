@@ -2,89 +2,139 @@ import Header from "@/components/Header";
 import Link from "next/link";
 
 /* ============================================================
-   仮データ（将来 Supabase から取得に差し替え予定）
+   イベント・ルートデータ（将来 Supabase から取得に差し替え予定）
+   参考: visitamakusa.com / sports.kumamoto.guide
    ============================================================ */
 
 const events = [
   {
     id: 1,
+    title: "天草一周！あまいちグランフォンド2026",
+    date: "2026年12月12日（土）・13日（日）",
+    time: "両日開催・詳細はエントリー後に通知",
+    location: "天草市内（スタート・ゴール地点調整中）",
+    fee: "SportEntryにてオンライン申込",
+    level: "全レベル対応",
+    distance: "140km・80km・40km（Day1）",
+    color: "from-sky-500 to-blue-700",
+    emoji: "🏆",
+    badge: "公式イベント",
+    link: "https://amakusa-cycle-granfondo.jp",
+  },
+  {
+    id: 2,
     title: "天草五橋サンライズライド",
-    date: "2026年10月19日（日）",
+    date: "2026年11月16日（日）",
     time: "5:30集合 / 6:00スタート",
     location: "松島総合センター前 駐車場",
     fee: "無料",
     level: "初心者歓迎",
     distance: "約30km",
-    color: "from-sky-400 to-cyan-600",
+    color: "from-orange-400 to-sky-500",
     emoji: "🌅",
-  },
-  {
-    id: 2,
-    title: "牛深ハーフセンチュリー",
-    date: "2026年11月3日（月・祝）",
-    time: "8:00集合 / 8:30スタート",
-    location: "牛深海中公園 駐車場",
-    fee: "1,000円（保険料込み）",
-    level: "中級者向け",
-    distance: "約80km",
-    color: "from-teal-400 to-emerald-600",
-    emoji: "🚴",
+    badge: "初心者向け",
+    link: null,
   },
   {
     id: 3,
-    title: "天草下島一周チャレンジ",
-    date: "2026年11月23日（日）",
-    time: "7:00集合 / 7:30スタート",
+    title: "崎津・世界遺産ライド",
+    date: "2026年11月30日（日）",
+    time: "8:00集合 / 8:30スタート",
     location: "本渡港 フェリーターミナル前",
-    fee: "2,000円（昼食・保険料込み）",
-    level: "上級者向け",
-    distance: "約160km",
-    color: "from-violet-400 to-blue-600",
-    emoji: "🏆",
+    fee: "500円（保険料）",
+    level: "中級者向け",
+    distance: "約80km",
+    color: "from-teal-400 to-emerald-600",
+    emoji: "⛪",
+    badge: "世界遺産コース",
+    link: null,
   },
 ];
 
 const routes = [
   {
     id: 1,
-    name: "天草五橋コース",
-    distance: "25km",
-    time: "1〜2時間",
+    name: "天草五橋・松島コース",
+    distance: "40km",
+    time: "2〜3時間",
     difficulty: "★☆☆ 初心者向け",
     difficultyColor: "text-emerald-600",
-    description: "天草の玄関口、五橋を渡る定番コース。海の絶景を楽しめる平坦なルートです。",
+    description: "グランフォンドDay1の40kmコース。天草の玄関口・五橋を渡り、松島の絶景を巡る入門ルート。平坦で走りやすく初めての方に最適です。",
     color: "from-sky-300 to-blue-500",
     emoji: "🌉",
+    tag: "グランフォンド40km",
   },
   {
     id: 2,
-    name: "崎津・羊角湾コース",
-    distance: "60km",
-    time: "3〜4時間",
+    name: "崎津世界遺産コース",
+    distance: "80km",
+    time: "4〜5時間",
     difficulty: "★★☆ 中級者向け",
     difficultyColor: "text-amber-600",
-    description: "世界遺産の崎津集落を訪ねる文化的なルート。天草キリシタンの歴史に触れながら走ります。",
+    description: "グランフォンドDay1・Day2の80kmコース。ユネスコ世界文化遺産の崎津集落を訪ねる。天草キリシタンの歴史と海の絶景が広がります。",
     color: "from-teal-400 to-cyan-600",
     emoji: "⛪",
+    tag: "グランフォンド80km",
   },
   {
     id: 3,
-    name: "牛深ウォーターフロントコース",
-    distance: "100km",
-    time: "5〜7時間",
+    name: "天草一周フルコース",
+    distance: "140km",
+    time: "7〜9時間",
     difficulty: "★★★ 上級者向け",
     difficultyColor: "text-red-600",
-    description: "天草最南端・牛深まで走る本格コース。東シナ海の大パノラマが広がります。",
+    description: "グランフォンドDay1・Day2のメインコース。天草下島を一周し、東シナ海の大パノラマと牛深ハイヤ大橋など天草の全てを体感できます。",
     color: "from-violet-400 to-indigo-600",
     emoji: "🌊",
+    tag: "グランフォンド140km",
   },
 ];
 
 const tourismSpots = [
-  { category: "観光スポット", items: ["崎津天主堂（世界遺産）", "天草五橋", "イルカウォッチング", "天草四郎ミュージアム"], emoji: "🏛️", color: "bg-sky-50 border-sky-200" },
-  { category: "飲食店", items: ["天草大王（地鶏料理）", "海鮮丼・刺身盛り合わせ", "ちゃんぽん・天草うどん", "カフェ＆スイーツ"], emoji: "🍜", color: "bg-orange-50 border-orange-200" },
-  { category: "宿泊施設", items: ["天草グランドホテル", "民宿・ペンション多数", "ライダーズハウス", "キャンプ場"], emoji: "🛏️", color: "bg-teal-50 border-teal-200" },
-  { category: "アクセス・交通", items: ["熊本港→天草 フェリー約60分", "三角駅→天草 バス約40分", "熊本IC→松島 車約60分", "自転車レンタル情報"], emoji: "⛴️", color: "bg-violet-50 border-violet-200" },
+  {
+    category: "観光スポット",
+    items: [
+      "崎津集落（ユネスコ世界文化遺産）",
+      "天草五橋（日本の道100選）",
+      "イルカウォッチング（通年）",
+      "牛深ハイヤ大橋",
+    ],
+    emoji: "🏛️",
+    color: "bg-sky-50 border-sky-200",
+  },
+  {
+    category: "飲食店・グルメ",
+    items: [
+      "天草大王（地鶏料理）",
+      "海鮮丼・活き造り",
+      "天草ちゃんぽん",
+      "タコ・伊勢えび料理",
+    ],
+    emoji: "🍜",
+    color: "bg-orange-50 border-orange-200",
+  },
+  {
+    category: "宿泊施設",
+    items: [
+      "天草グランドホテル",
+      "民宿・ペンション多数",
+      "ライダーズハウス",
+      "キャンプ場（天草各地）",
+    ],
+    emoji: "🛏️",
+    color: "bg-teal-50 border-teal-200",
+  },
+  {
+    category: "アクセス・交通",
+    items: [
+      "熊本港↔天草 フェリー約60分",
+      "三角駅↔天草 バス約40分",
+      "熊本IC→松島 車約60分",
+      "阿蘇くまもと空港から約90分",
+    ],
+    emoji: "⛴️",
+    color: "bg-violet-50 border-violet-200",
+  },
 ];
 
 /* ============================================================
@@ -102,30 +152,35 @@ export default function Home() {
 
         {/* ② メインビジュアル */}
         <section id="hero" className="relative overflow-hidden">
-          {/* 背景グラデーション（仮ビジュアル。実際の天草海岸写真に差し替え予定） */}
-          <div className="relative h-[70vh] min-h-[480px] bg-gradient-to-br from-ocean-800 via-ocean-600 to-cyan-400 flex items-center justify-center">
-            {/* 装飾的な波 */}
-            <div className="absolute inset-0 opacity-20">
-              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white/30 to-transparent" />
-              <svg className="absolute bottom-0 w-full" viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
-                <path d="M0,60 C240,100 480,20 720,60 C960,100 1200,20 1440,60 L1440,120 L0,120 Z" fill="white" opacity="0.3" />
-                <path d="M0,80 C360,40 720,100 1080,60 C1260,40 1380,80 1440,80 L1440,120 L0,120 Z" fill="white" opacity="0.5" />
-              </svg>
+          <div className="relative h-[75vh] min-h-[520px] bg-gradient-to-br from-ocean-900 via-ocean-700 to-cyan-500 flex items-center justify-center">
+            {/* 装飾 */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute -top-20 -right-20 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
+              <div className="absolute bottom-20 -left-20 h-80 w-80 rounded-full bg-cyan-300/10 blur-3xl" />
             </div>
+            <svg className="absolute bottom-0 w-full" viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none">
+              <path d="M0,50 C360,90 720,10 1080,50 C1260,70 1380,60 1440,50 L1440,100 L0,100 Z" fill="white" opacity="0.15" />
+              <path d="M0,70 C240,40 480,90 720,70 C960,50 1200,80 1440,70 L1440,100 L0,100 Z" fill="white" opacity="0.3" />
+            </svg>
 
-            {/* テキストコンテンツ */}
-            <div className="relative z-10 px-4 text-center text-white">
-              <p className="mb-3 text-sm font-medium tracking-widest text-ocean-100 sm:text-base">
+            <div className="relative z-10 px-4 text-center text-white max-w-3xl mx-auto">
+              <p className="mb-2 text-xs font-semibold tracking-[0.3em] text-cyan-200 sm:text-sm">
+                VISITあまくさプロジェクト 連携
+              </p>
+              <p className="mb-4 text-sm font-medium tracking-widest text-ocean-100 sm:text-base">
                 熊本県 天草からはじまる
               </p>
-              <h1 className="mb-6 text-4xl font-black leading-tight tracking-tight sm:text-5xl md:text-6xl">
+              <h1 className="mb-2 text-4xl font-black leading-tight tracking-tight sm:text-5xl md:text-6xl">
                 天草を、<br className="sm:hidden" />
                 自転車で楽しもう。
               </h1>
-              <p className="mb-8 text-base text-ocean-100 sm:text-lg max-w-lg mx-auto">
-                美しい海と島々を駆け抜ける、特別なサイクリング体験。
-                <br className="hidden sm:block" />
-                一緒に天草の風を感じましょう。
+              <p className="mb-2 text-lg font-bold text-cyan-200 sm:text-xl">
+                天草一周！あまいちグランフォンド2026
+              </p>
+              <p className="mb-8 text-sm text-ocean-100 sm:text-base">
+                2026年12月12日（土）・13日（日）開催
+                <span className="mx-2 text-ocean-300">|</span>
+                140km・80km・40km・30kmコース
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
                 <Link
@@ -138,15 +193,31 @@ export default function Home() {
                   href="#routes"
                   className="rounded-full border-2 border-white px-8 py-4 text-base font-bold text-white transition hover:bg-white/20"
                 >
-                  🗺 ルートを探す
+                  🗺 コースを確認する
                 </Link>
               </div>
             </div>
           </div>
+          <div className="h-8 bg-white" />
+        </section>
 
-          {/* 波形の区切り */}
-          <div className="relative h-12 overflow-hidden bg-white">
-            <div className="absolute -top-12 left-0 right-0 h-12 bg-gradient-to-br from-ocean-800 via-ocean-600 to-cyan-400" style={{ clipPath: 'ellipse(55% 100% at 50% 0%)' }} />
+        {/* グランフォンド告知バナー */}
+        <section className="bg-ocean-900 py-4 px-4">
+          <div className="mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 text-white">
+            <div className="flex items-center gap-3">
+              <span className="rounded-full bg-yellow-400 px-3 py-1 text-xs font-bold text-ocean-900">NEW</span>
+              <span className="text-sm font-semibold">
+                天草一周！あまいちグランフォンド2026 — エントリー受付中
+              </span>
+            </div>
+            <a
+              href="https://amakusa-cycle-granfondo.jp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 rounded-full bg-white px-5 py-2 text-sm font-bold text-ocean-700 transition hover:bg-ocean-50"
+            >
+              公式サイトを見る →
+            </a>
           </div>
         </section>
 
@@ -161,7 +232,7 @@ export default function Home() {
                 開催予定イベント
               </h2>
               <p className="mt-3 text-slate-600">
-                初心者から上級者まで、さまざまなレベルのイベントを開催しています。
+                初心者から上級者まで、天草の風を感じるイベントを開催しています。
               </p>
             </div>
 
@@ -171,12 +242,14 @@ export default function Home() {
                   key={event.id}
                   className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:shadow-md hover:-translate-y-0.5"
                 >
-                  {/* イベント仮ビジュアル */}
-                  <div className={`h-40 bg-gradient-to-br ${event.color} flex items-center justify-center`}>
+                  <div className={`h-40 bg-gradient-to-br ${event.color} flex items-center justify-center relative`}>
                     <span className="text-6xl">{event.emoji}</span>
+                    <span className="absolute top-3 right-3 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-bold text-white border border-white/30">
+                      {event.badge}
+                    </span>
                   </div>
                   <div className="p-5">
-                    <div className="mb-2 flex items-center gap-2">
+                    <div className="mb-2 flex items-center gap-2 flex-wrap">
                       <span className="rounded-full bg-ocean-100 px-2 py-0.5 text-xs font-medium text-ocean-700">
                         {event.level}
                       </span>
@@ -184,7 +257,7 @@ export default function Home() {
                         {event.distance}
                       </span>
                     </div>
-                    <h3 className="mb-3 text-lg font-bold text-slate-900">
+                    <h3 className="mb-3 text-base font-bold text-slate-900 leading-snug">
                       {event.title}
                     </h3>
                     <dl className="space-y-1.5 text-sm text-slate-600">
@@ -205,14 +278,26 @@ export default function Home() {
                         <dd className="font-semibold text-ocean-700">{event.fee}</dd>
                       </div>
                     </dl>
-                    {/* 申込機能は今後実装予定 */}
                     <div className="mt-4">
-                      <span className="block w-full rounded-xl border-2 border-ocean-200 px-4 py-2.5 text-center text-sm font-semibold text-ocean-400 cursor-default">
-                        参加申込（準備中）
-                      </span>
-                      <p className="mt-1.5 text-center text-xs text-slate-400">
-                        LINEで先行受付中 ↓
-                      </p>
+                      {event.link ? (
+                        <a
+                          href={event.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block w-full rounded-xl bg-ocean-600 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-ocean-700"
+                        >
+                          公式サイトでエントリー →
+                        </a>
+                      ) : (
+                        <>
+                          <span className="block w-full rounded-xl border-2 border-ocean-200 px-4 py-2.5 text-center text-sm font-semibold text-ocean-400 cursor-default">
+                            参加申込（準備中）
+                          </span>
+                          <p className="mt-1.5 text-center text-xs text-slate-400">
+                            LINEで先行受付中 ↓
+                          </p>
+                        </>
+                      )}
                     </div>
                   </div>
                 </article>
@@ -233,18 +318,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ④ おすすめサイクリングルート */}
+        {/* ④ グランフォンドコース紹介 */}
         <section id="routes" className="py-16 px-4 sm:px-6 bg-ocean-50">
           <div className="mx-auto max-w-6xl">
             <div className="text-center mb-10">
               <span className="inline-block rounded-full bg-ocean-100 px-4 py-1 text-sm font-semibold text-ocean-700 mb-3">
-                Routes
+                Courses
               </span>
               <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-                おすすめサイクリングルート
+                グランフォンド コース紹介
               </h2>
               <p className="mt-3 text-slate-600">
-                天草の絶景を堪能できる、選りすぐりのルートをご紹介します。
+                あまいちグランフォンド2026の公式コース。初心者から上級者まで選べる4距離。
               </p>
             </div>
 
@@ -254,9 +339,11 @@ export default function Home() {
                   key={route.id}
                   className="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md hover:-translate-y-0.5"
                 >
-                  {/* ルート仮ビジュアル */}
-                  <div className={`h-44 bg-gradient-to-br ${route.color} flex items-center justify-center`}>
-                    <span className="text-7xl">{route.emoji}</span>
+                  <div className={`h-44 bg-gradient-to-br ${route.color} flex flex-col items-center justify-center gap-2`}>
+                    <span className="text-6xl">{route.emoji}</span>
+                    <span className="rounded-full bg-white/20 px-3 py-0.5 text-xs font-bold text-white border border-white/30">
+                      {route.tag}
+                    </span>
                   </div>
                   <div className="p-5">
                     <h3 className="mb-2 text-xl font-bold text-slate-900">
@@ -277,13 +364,27 @@ export default function Home() {
                     <p className="mb-4 text-sm leading-relaxed text-slate-600">
                       {route.description}
                     </p>
-                    {/* ルート詳細は今後実装予定 */}
-                    <span className="block w-full rounded-xl border-2 border-ocean-200 px-4 py-2.5 text-center text-sm font-semibold text-ocean-400 cursor-default">
-                      ルート詳細（準備中）
-                    </span>
+                    <a
+                      href="https://amakusa-cycle-granfondo.jp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full rounded-xl border-2 border-ocean-300 px-4 py-2.5 text-center text-sm font-semibold text-ocean-600 transition hover:bg-ocean-50"
+                    >
+                      コース詳細を見る →
+                    </a>
                   </div>
                 </article>
               ))}
+            </div>
+
+            {/* Day2コース補足 */}
+            <div className="mt-6 rounded-2xl bg-white p-5 shadow-sm border border-ocean-100">
+              <p className="text-sm font-semibold text-ocean-700 mb-2">📋 Day2（12月13日）コース</p>
+              <div className="flex flex-wrap gap-3 text-sm text-slate-600">
+                <span className="rounded-full bg-ocean-50 px-3 py-1">🏆 140km（上級）</span>
+                <span className="rounded-full bg-teal-50 px-3 py-1">🚴 80km（中級）</span>
+                <span className="rounded-full bg-emerald-50 px-3 py-1">🌱 30km（初心者）</span>
+              </div>
             </div>
           </div>
         </section>
@@ -298,6 +399,9 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
                 あまいちサイクリングクラブとは
               </h2>
+              <p className="mt-3 text-slate-600">
+                「天草一周（あまいち）」を合言葉に、天草のサイクリング文化を盛り上げるクラブです。
+              </p>
             </div>
 
             <div className="rounded-3xl bg-gradient-to-br from-ocean-50 to-cyan-50 p-8 sm:p-10">
@@ -307,8 +411,8 @@ export default function Home() {
                     <span className="text-2xl">🎯</span> クラブの目的
                   </h3>
                   <p className="text-sm leading-relaxed text-slate-700">
-                    天草の豊かな自然と文化を、サイクリングという体験を通じて多くの方に知ってもらうこと。
-                    地域に愛される活動を通じて、天草の魅力を国内外に発信します。
+                    天草の豊かな自然・世界遺産・食文化を、サイクリングという体験を通じて多くの方に知ってもらうこと。
+                    VISITあまくさプロジェクトと連携し、天草の魅力を国内外に発信します。
                   </p>
                 </div>
                 <div>
@@ -316,10 +420,10 @@ export default function Home() {
                     <span className="text-2xl">🚵</span> 活動内容
                   </h3>
                   <ul className="space-y-1.5 text-sm text-slate-700">
+                    <li className="flex items-start gap-2"><span>•</span>あまいちグランフォンドの普及・サポート</li>
                     <li className="flex items-start gap-2"><span>•</span>月1〜2回の定例サイクリング</li>
-                    <li className="flex items-start gap-2"><span>•</span>季節イベントの企画・運営</li>
                     <li className="flex items-start gap-2"><span>•</span>初心者向けサイクリング教室</li>
-                    <li className="flex items-start gap-2"><span>•</span>ルートマップの整備・情報発信</li>
+                    <li className="flex items-start gap-2"><span>•</span>天草サイクリングルート情報の発信</li>
                   </ul>
                 </div>
                 <div>
@@ -328,7 +432,7 @@ export default function Home() {
                   </h3>
                   <p className="text-sm leading-relaxed text-slate-700">
                     天草在住・在勤の方、天草が好きな方、サイクリングに興味のある方ならどなたでも歓迎！
-                    年齢・レベル・性別不問。初めての方も安心です。
+                    年齢・レベル・性別不問。ロードバイクがなくてもOKです。
                   </p>
                 </div>
                 <div>
@@ -337,8 +441,8 @@ export default function Home() {
                   </h3>
                   <p className="text-sm leading-relaxed text-slate-700">
                     まずはLINE公式アカウントを友だち追加してください。
-                    イベント情報やルート情報を随時配信しています。
-                    参加費は各イベントの案内をご確認ください。
+                    グランフォンドの練習会や地域ライドの情報を配信しています。
+                    グランフォンド本番はSportEntryからエントリー可能です。
                   </p>
                 </div>
               </div>
@@ -357,7 +461,15 @@ export default function Home() {
                 天草観光情報
               </h2>
               <p className="mt-3 text-slate-600">
-                サイクリングの前後に楽しめる天草の見どころをご紹介します。
+                ライドの前後に楽しめる天草の見どころをご紹介します。
+                <a
+                  href="https://visitamakusa.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-2 text-ocean-600 underline text-sm"
+                >
+                  VISITあまくさプロジェクト ↗
+                </a>
               </p>
             </div>
 
@@ -382,6 +494,22 @@ export default function Home() {
                 </div>
               ))}
             </div>
+
+            {/* 観光情報リンク */}
+            <div className="mt-6 rounded-2xl bg-white border border-ocean-100 p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <p className="font-semibold text-slate-800">天草の詳しい観光情報</p>
+                <p className="text-sm text-slate-500">VISITあまくさプロジェクト公式サイトをご覧ください</p>
+              </div>
+              <a
+                href="https://visitamakusa.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 rounded-full bg-ocean-600 px-6 py-2.5 text-sm font-bold text-white transition hover:bg-ocean-700"
+              >
+                VISITあまくさ →
+              </a>
+            </div>
           </div>
         </section>
 
@@ -394,7 +522,6 @@ export default function Home() {
                   <svg viewBox="0 0 40 40" className="h-14 w-14" fill="none">
                     <rect width="40" height="40" rx="8" fill="#00B900"/>
                     <path d="M20 8C12.27 8 6 13.48 6 20.2c0 6.02 5.34 11.06 12.56 12.02.49.1 1.15.32 1.32.73.15.38.1.97.05 1.35l-.21 1.28c-.07.38-.3 1.48 1.29.81 1.59-.67 8.58-5.06 11.7-8.67C34.64 25.51 34 22.96 34 20.2 34 13.48 27.73 8 20 8z" fill="white"/>
-                    <path d="M16.5 22.5h-3a.5.5 0 0 1-.5-.5v-5a.5.5 0 0 1 1 0v4.5h2.5a.5.5 0 0 1 0 1zm2 0a.5.5 0 0 1-.5-.5v-5a.5.5 0 0 1 1 0v5a.5.5 0 0 1-.5.5zm6 0h-3a.5.5 0 0 1-.5-.5v-5a.5.5 0 0 1 1 0v4.5H24v-2h-1.5a.5.5 0 0 1 0-1H24v-1.5h-2a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5z" fill="#00B900"/>
                   </svg>
                 </div>
               </div>
@@ -402,22 +529,21 @@ export default function Home() {
                 LINE公式アカウント
               </h2>
               <p className="mb-6 text-green-100">
-                友だち追加で最新イベント情報をいち早くお届け！
+                友だち追加でグランフォンド最新情報をいち早くお届け！
                 <br />
-                サイクリングルート情報・天気予報・グループ参加もLINEで。
+                練習会・ライド情報・エントリー案内もLINEで。
               </p>
               <ul className="mb-8 space-y-2 text-sm text-left text-green-100">
                 <li className="flex items-center gap-2">
-                  <span className="text-white">✓</span> イベント開催情報をリアルタイム配信
+                  <span className="text-white">✓</span> あまいちグランフォンド情報をリアルタイム配信
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-white">✓</span> ルートマップ・高度図を共有
+                  <span className="text-white">✓</span> 練習会・ルートマップを共有
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-white">✓</span> 参加申込・問い合わせもLINEでOK
                 </li>
               </ul>
-              {/* LINE友だち追加ボタン（URLは運用開始時に設定） */}
               <div
                 className="inline-flex cursor-default items-center gap-3 rounded-full bg-white px-8 py-4 text-base font-bold text-[#00B900] opacity-80"
                 title="運用開始時にLINE公式アカウントURLを設定予定"
@@ -437,7 +563,6 @@ export default function Home() {
       <footer id="contact" className="border-t border-slate-200 bg-ocean-950 text-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {/* ブランド */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-ocean-600 text-xl">
@@ -445,16 +570,43 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="font-bold text-white">あまいちサイクリングクラブ</div>
-                  <div className="text-xs text-ocean-300">Amaichi Cycling Club</div>
+                  <div className="text-xs text-ocean-300">天草一周 × サイクリング</div>
                 </div>
               </div>
               <p className="text-sm leading-relaxed text-ocean-300">
                 熊本県天草地域を拠点に活動するサイクリングクラブ。
-                天草の美しい自然の中でサイクリングの楽しさをお伝えします。
+                「天草一周（あまいち）」を合言葉に、VISITあまくさプロジェクトと連携して天草の魅力を発信します。
               </p>
+              <div className="mt-4 flex gap-3">
+                <a
+                  href="https://visitamakusa.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-ocean-400 underline hover:text-ocean-300"
+                >
+                  VISITあまくさ
+                </a>
+                <span className="text-ocean-700">|</span>
+                <a
+                  href="https://amakusa-cycle-granfondo.jp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-ocean-400 underline hover:text-ocean-300"
+                >
+                  グランフォンド公式
+                </a>
+                <span className="text-ocean-700">|</span>
+                <a
+                  href="https://sports.kumamoto.guide"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-ocean-400 underline hover:text-ocean-300"
+                >
+                  くまもっと旅スポ
+                </a>
+              </div>
             </div>
 
-            {/* リンク */}
             <div>
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-ocean-300">
                 コンテンツ
@@ -462,15 +614,12 @@ export default function Home() {
               <ul className="space-y-2">
                 {[
                   { label: 'イベント情報', href: '#events' },
-                  { label: 'サイクリングルート', href: '#routes' },
+                  { label: 'グランフォンドコース', href: '#routes' },
                   { label: 'クラブ紹介', href: '#about' },
                   { label: '天草観光情報', href: '#tourism' },
                 ].map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-ocean-300 transition hover:text-white"
-                    >
+                    <Link href={link.href} className="text-sm text-ocean-300 transition hover:text-white">
                       {link.label}
                     </Link>
                   </li>
@@ -478,37 +627,33 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* お問い合わせ・法的 */}
             <div>
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-ocean-300">
                 お問い合わせ
               </h3>
               <ul className="space-y-2">
                 {[
-                  { label: 'お問い合わせ（準備中）', href: '#' },
-                  { label: '利用規約（準備中）', href: '#' },
-                  { label: 'プライバシーポリシー（準備中）', href: '#' },
-                ].map((link) => (
-                  <li key={link.label}>
-                    <span className="text-sm text-ocean-400 cursor-default">
-                      {link.label}
-                    </span>
+                  'お問い合わせ（準備中）',
+                  '利用規約（準備中）',
+                  'プライバシーポリシー（準備中）',
+                ].map((label) => (
+                  <li key={label}>
+                    <span className="text-sm text-ocean-400 cursor-default">{label}</span>
                   </li>
                 ))}
               </ul>
               <div className="mt-4">
-                <p className="text-xs text-ocean-400">
-                  運営：あまいちサイクリングクラブ
-                </p>
-                <p className="text-xs text-ocean-400">
-                  熊本県天草市
-                </p>
+                <p className="text-xs text-ocean-400">運営：あまいちサイクリングクラブ</p>
+                <p className="text-xs text-ocean-400">熊本県天草市</p>
               </div>
             </div>
           </div>
 
           <div className="mt-10 border-t border-ocean-800 pt-6 text-center text-xs text-ocean-500">
             © 2026 あまいちサイクリングクラブ. All rights reserved.
+            <span className="mx-2">|</span>
+            Supported by
+            <a href="https://visitamakusa.com" target="_blank" rel="noopener noreferrer" className="ml-1 underline hover:text-ocean-300">VISITあまくさプロジェクト</a>
           </div>
         </div>
       </footer>
