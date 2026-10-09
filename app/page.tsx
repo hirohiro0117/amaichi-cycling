@@ -419,6 +419,59 @@ export default function Home() {
           </div>
         </section>
 
+        {/* VISITあまくさ お知らせ */}
+        <section className="py-12 px-4 sm:px-6 bg-slate-50">
+          <div className="mx-auto max-w-4xl">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <span className="inline-block rounded-full bg-ocean-100 px-3 py-1 text-xs font-semibold text-ocean-700">
+                  News
+                </span>
+                <h2 className="text-xl font-bold text-slate-900">天草からのお知らせ</h2>
+              </div>
+              <a
+                href="https://visitamakusa.com/news/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-semibold text-ocean-600 hover:text-ocean-800"
+              >
+                VISITあまくさ 全件 →
+              </a>
+            </div>
+
+            <div className="divide-y divide-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
+              {[
+                { date: "2026.09.18", label: "受付中", labelColor: "bg-green-100 text-green-700", title: "2026年度 恐竜の島🦖化石発見クルーズ！予約受付中", url: "https://visitamakusa.com/news/" },
+                { date: "2026.09.16", label: "お知らせ", labelColor: "bg-ocean-100 text-ocean-700", title: "天草国立公園70周年記念式典", url: "https://visitamakusa.com/news/" },
+                { date: "2026.09.10", label: "受付中", labelColor: "bg-green-100 text-green-700", title: "🐬天草で使って、天草を元気に！天草元気旅チャージ券", url: "https://visitamakusa.com/news/" },
+                { date: "2026.09.03", label: "交通情報", labelColor: "bg-amber-100 text-amber-700", title: "﨑津集落 秋分連休（9/20〜22）観光車両の交通誘導実施", url: "https://visitamakusa.com/news/" },
+                { date: "2026.09.02", label: "イベント", labelColor: "bg-purple-100 text-purple-700", title: "写真展「地方創生に駆けた男 森國久の不屈の生涯」", url: "https://visitamakusa.com/news/" },
+                { date: "2026.08.25", label: "お知らせ", labelColor: "bg-ocean-100 text-ocean-700", title: "令和8年 熊本地震に関する情報", url: "https://visitamakusa.com/news/" },
+                { date: "2026.08.10", label: "交通情報", labelColor: "bg-amber-100 text-amber-700", title: "﨑津集落 お盆期間（8/11〜15）観光車両の交通誘導実施", url: "https://visitamakusa.com/news/" },
+                { date: "2026.04.28", label: "交通情報", labelColor: "bg-amber-100 text-amber-700", title: "﨑津集落 GW期間（4/29〜5/5）観光車両の交通誘導実施", url: "https://visitamakusa.com/news/" },
+                { date: "2025.10.06", label: "サイクリング", labelColor: "bg-sky-100 text-sky-700", title: "天草一周！あまいちグランフォンド2025 開催告知", url: "https://amakusa-cycle-granfondo.jp" },
+                { date: "2025.10.06", label: "お知らせ", labelColor: "bg-ocean-100 text-ocean-700", title: "天草信用金庫よりプロジェクト実行委員会への寄付贈呈式", url: "https://visitamakusa.com/news/" },
+                { date: "2025.09.18", label: "グルメ", labelColor: "bg-orange-100 text-orange-700", title: "第24回 あまくさ丼丼フェア 開催", url: "https://visitamakusa.com/news/" },
+                { date: "2025.08.28", label: "体験", labelColor: "bg-teal-100 text-teal-700", title: "2025年度 恐竜の島🦕化石発見クルーズ！参加者募集", url: "https://visitamakusa.com/news/" },
+              ].map((item) => (
+                <a
+                  key={item.title}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 px-5 py-4 hover:bg-slate-50 transition"
+                >
+                  <span className="shrink-0 text-xs text-slate-400 mt-0.5 w-20">{item.date}</span>
+                  <span className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-semibold mt-0.5 ${item.labelColor}`}>
+                    {item.label}
+                  </span>
+                  <span className="text-sm text-slate-700 leading-snug">{item.title}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ④ グランフォンドコース紹介 */}
         <section id="routes" className="py-16 px-4 sm:px-6 bg-ocean-50">
           <div className="mx-auto max-w-6xl">
