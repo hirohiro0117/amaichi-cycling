@@ -163,14 +163,14 @@ export default function Home() {
               <path d="M0,70 C240,40 480,90 720,70 C960,50 1200,80 1440,70 L1440,100 L0,100 Z" fill="white" opacity="0.3" />
             </svg>
 
-            <div className="relative z-10 px-4 text-center text-white max-w-3xl mx-auto">
+            <div className="relative z-10 px-4 text-center text-white max-w-4xl mx-auto">
               <p className="mb-2 text-xs font-semibold tracking-[0.3em] text-cyan-200 sm:text-sm">
                 VISITあまくさプロジェクト 連携
               </p>
               <p className="mb-4 text-sm font-medium tracking-widest text-ocean-100 sm:text-base">
                 熊本県 天草からはじまる
               </p>
-              <h1 className="mb-3 text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="mb-3 text-4xl font-black leading-tight tracking-tight sm:text-5xl xl:text-6xl">
                 天草を、自転車で楽しもう。
               </h1>
               <p className="mb-2 text-base font-medium text-cyan-100 sm:text-lg italic">
