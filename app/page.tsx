@@ -112,42 +112,46 @@ const routes = [
 const tourismSpots = [
   {
     category: "EAT｜味わう",
+    highlight: "3つの海が育む食の宝庫",
     items: [
-      "天草大王（地鶏料理）",
-      "海鮮丼・活き造り",
-      "天草ちゃんぽん",
-      "タコ・伊勢えび料理",
+      "天草大王（地鶏料理）・天草あか牛",
+      "車えび・伊勢えび（海老えびフェア）",
+      "緋扇貝・岩ガキ・生ウニ（苓北・季節限定）",
+      "天草寿司・海鮮丼・ちゃんぽん",
     ],
     emoji: "🍽️",
     color: "bg-orange-50 border-orange-200",
-    noteLink: "https://note.com/kumamoto_amaichi",
+    noteLink: "https://note.com/kumamoto_amaichi/m/mff841257e87d",
   },
   {
     category: "STORY｜物語に出会う",
+    highlight: "世界遺産と夕陽・イルカの島",
     items: [
-      "崎津集落（ユネスコ世界文化遺産）",
-      "天草キリシタンの歴史",
-      "天草四郎ゆかりの地",
-      "羊角湾の自然と海の恵み",
+      "崎津集落（ユネスコ世界文化遺産・冬の気嵐）",
+      "西平椿公園（日本の夕陽百選）",
+      "天草キリシタンの歴史・天草四郎",
+      "イルカウォッチング（遭遇率9割以上）",
     ],
     emoji: "📖",
     color: "bg-sky-50 border-sky-200",
-    noteLink: "https://note.com/kumamoto_amaichi",
+    noteLink: "https://note.com/kumamoto_amaichi/m/m701bc9cad304",
   },
   {
-    category: "TAKE HOME｜持ち帰る",
+    category: "ACTIVITY｜体験する",
+    highlight: "海・山・空で天草を全身で感じる",
     items: [
-      "あか巻（牛深の縁起菓子）",
-      "天草の塩・海産物加工品",
-      "天草陶磁器・工芸品",
-      "くまもとサイクルグッズ",
+      "天空ジップライン白嶽（350m・高さ90m）",
+      "マグロウォッチング（餌付け＆まぐろ丼）",
+      "シードーナツ（海中水族館・イルカ体験）",
+      "農家民泊・収穫体験（苓北町）",
     ],
-    emoji: "🎁",
-    color: "bg-pink-50 border-pink-200",
-    noteLink: "https://note.com/kumamoto_amaichi",
+    emoji: "🎯",
+    color: "bg-violet-50 border-violet-200",
+    noteLink: "https://visitamakusa.com/",
   },
   {
     category: "STOP BY｜立ち寄る",
+    highlight: "ライド途中の絶景休憩スポット",
     items: [
       "道の駅 上天草さんぱーる",
       "ミオ カミーノ天草（カフェ休憩）",
@@ -156,7 +160,33 @@ const tourismSpots = [
     ],
     emoji: "📍",
     color: "bg-teal-50 border-teal-200",
-    noteLink: "https://note.com/kumamoto_amaichi",
+    noteLink: "https://note.com/kumamoto_amaichi/m/md7a34c8f63ae",
+  },
+  {
+    category: "STAY｜泊まる",
+    highlight: "温泉と星空に包まれる宿",
+    items: [
+      "下田温泉（源泉100%の天然温泉）",
+      "上天草温泉郷（大矢野・松島温泉）",
+      "天草プリンスホテル（海望む絶景）",
+      "農家民泊・ライダーズハウス",
+    ],
+    emoji: "🛏️",
+    color: "bg-amber-50 border-amber-200",
+    noteLink: "https://visitamakusa.com/",
+  },
+  {
+    category: "ACCESS｜アクセス",
+    highlight: "熊本から1時間・空からも行ける",
+    items: [
+      "三角駅（スタート地点・宇城市）",
+      "熊本港↔天草 フェリー約60分",
+      "天草五橋（天草パールライン）",
+      "天草エアライン（天草空港）",
+    ],
+    emoji: "⛴️",
+    color: "bg-slate-50 border-slate-200",
+    noteLink: "https://visitamakusa.com/",
   },
 ];
 
@@ -568,32 +598,35 @@ export default function Home() {
                 Tourism
               </span>
               <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-                天草観光情報
+                天草の魅力
               </h2>
               <p className="mt-3 text-slate-600">
-                ライドの前後に楽しめる天草の見どころをご紹介します。
-                <a
-                  href="https://visitamakusa.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ml-2 text-ocean-600 underline text-sm"
-                >
-                  VISITあまくさプロジェクト ↗
-                </a>
+                世界遺産・絶景・グルメ・温泉・体験。走るだけじゃない、天草の全てを楽しもう。
               </p>
+              <a
+                href="https://visitamakusa.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-block text-sm font-semibold text-ocean-600 underline"
+              >
+                心の島へ、旅に出よう。— VISITあまくさプロジェクト ↗
+              </a>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {tourismSpots.map((spot) => (
                 <div
                   key={spot.category}
-                  className={`rounded-2xl border p-6 ${spot.color}`}
+                  className={`rounded-2xl border p-6 flex flex-col ${spot.color}`}
                 >
-                  <div className="mb-3 flex items-center gap-2">
+                  <div className="mb-1 flex items-center gap-2">
                     <span className="text-2xl">{spot.emoji}</span>
-                    <h3 className="font-bold text-slate-800">{spot.category}</h3>
+                    <h3 className="font-bold text-slate-800 text-sm">{spot.category}</h3>
                   </div>
-                  <ul className="space-y-2 mb-4">
+                  {"highlight" in spot && (
+                    <p className="mb-3 text-xs font-semibold text-ocean-600">{(spot as {highlight: string}).highlight}</p>
+                  )}
+                  <ul className="space-y-2 mb-4 flex-1">
                     {spot.items.map((item) => (
                       <li key={item} className="flex items-start gap-1.5 text-sm text-slate-700">
                         <span className="mt-0.5 shrink-0 text-ocean-400">▸</span>
@@ -607,7 +640,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="text-xs font-semibold text-ocean-600 underline hover:text-ocean-800"
                   >
-                    noteで詳しく読む →
+                    {spot.noteLink.includes("note.com") ? "noteで詳しく読む →" : "VISITあまくさで見る →"}
                   </a>
                 </div>
               ))}
