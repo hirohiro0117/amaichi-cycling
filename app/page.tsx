@@ -20,6 +20,7 @@ const events = [
     emoji: "🏆",
     badge: "公式イベント",
     link: "https://amakusa-cycle-granfondo.jp",
+    ended: false,
   },
   {
     id: 2,
@@ -34,6 +35,7 @@ const events = [
     emoji: "🏝️",
     badge: "島旅体験",
     link: "https://amaichi.jpn.org/",
+    ended: false,
   },
   {
     id: 3,
@@ -48,6 +50,22 @@ const events = [
     emoji: "🚲",
     badge: "気軽に参加",
     link: "https://amaichi.jpn.org/",
+    ended: false,
+  },
+  {
+    id: 4,
+    title: "天草一周！あまいちグランフォンド2025",
+    date: "2025年12月13日（土）・14日（日）",
+    time: "雲仙天草国立公園天草地域指定70周年記念プレイベント",
+    location: "苓北町富岡城（Day1）・上天草市姫戸統括支所（Day2）",
+    fee: "80km 9,000円（1日）／18,000円（2日）｜140km 12,000円",
+    level: "全レベル対応",
+    distance: "140km・80km",
+    color: "from-slate-400 to-slate-600",
+    emoji: "🏆",
+    badge: "開催済み",
+    link: "https://amakusa-cycle-granfondo.jp",
+    ended: true,
   },
 ];
 
@@ -242,34 +260,46 @@ export default function Home() {
               {events.map((event) => (
                 <article
                   key={event.id}
-                  className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:shadow-md hover:-translate-y-0.5"
+                  className={`overflow-hidden rounded-2xl border bg-white shadow-sm transition ${
+                    event.ended
+                      ? "border-slate-200 opacity-70"
+                      : "border-slate-100 hover:shadow-md hover:-translate-y-0.5"
+                  }`}
                 >
                   <div className={`h-40 bg-gradient-to-br ${event.color} flex items-center justify-center relative`}>
-                    <span className="text-6xl">{event.emoji}</span>
-                    <span className="absolute top-3 right-3 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-bold text-white border border-white/30">
-                      {event.badge}
-                    </span>
+                    <span className={`text-6xl ${event.ended ? "grayscale" : ""}`}>{event.emoji}</span>
+                    {event.ended ? (
+                      <span className="absolute top-3 right-3 rounded-full bg-slate-800/80 px-3 py-1 text-xs font-bold text-white">
+                        終了
+                      </span>
+                    ) : (
+                      <span className="absolute top-3 right-3 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-bold text-white border border-white/30">
+                        {event.badge}
+                      </span>
+                    )}
                   </div>
                   <div className="p-5">
                     <div className="mb-2 flex items-center gap-2 flex-wrap">
-                      <span className="rounded-full bg-ocean-100 px-2 py-0.5 text-xs font-medium text-ocean-700">
-                        {event.level}
-                      </span>
+                      {event.ended ? (
+                        <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500">
+                          開催終了
+                        </span>
+                      ) : (
+                        <span className="rounded-full bg-ocean-100 px-2 py-0.5 text-xs font-medium text-ocean-700">
+                          {event.level}
+                        </span>
+                      )}
                       <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">
                         {event.distance}
                       </span>
                     </div>
-                    <h3 className="mb-3 text-base font-bold text-slate-900 leading-snug">
+                    <h3 className={`mb-3 text-base font-bold leading-snug ${event.ended ? "text-slate-500" : "text-slate-900"}`}>
                       {event.title}
                     </h3>
-                    <dl className="space-y-1.5 text-sm text-slate-600">
+                    <dl className="space-y-1.5 text-sm text-slate-500">
                       <div className="flex items-start gap-2">
                         <dt>📅</dt>
                         <dd>{event.date}</dd>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <dt>🕐</dt>
-                        <dd>{event.time}</dd>
                       </div>
                       <div className="flex items-start gap-2">
                         <dt>📍</dt>
@@ -277,11 +307,15 @@ export default function Home() {
                       </div>
                       <div className="flex items-start gap-2">
                         <dt>💴</dt>
-                        <dd className="font-semibold text-ocean-700">{event.fee}</dd>
+                        <dd className={event.ended ? "text-slate-400" : "font-semibold text-ocean-700"}>{event.fee}</dd>
                       </div>
                     </dl>
                     <div className="mt-4">
-                      {event.link ? (
+                      {event.ended ? (
+                        <span className="block w-full rounded-xl bg-slate-100 px-4 py-2.5 text-center text-sm font-semibold text-slate-400 cursor-default">
+                          このイベントは終了しました
+                        </span>
+                      ) : event.link ? (
                         <a
                           href={event.link}
                           target="_blank"
