@@ -1017,7 +1017,7 @@ export default function Home() {
           </div>
 
           <div className="mt-10 border-t border-ocean-800 pt-6 text-center text-xs text-ocean-500">
-            © 2026 あまいちサイクルルート. All rights reserved.
+            © 2026 NPO法人あまいち. All rights reserved.
           </div>
         </div>
       </footer>
