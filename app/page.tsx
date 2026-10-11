@@ -73,39 +73,39 @@ const events = [
 const routes = [
   {
     id: 1,
-    name: "天草五橋・松島コース",
-    distance: "50km",
-    time: "2〜3時間",
+    name: "40km コース",
+    distance: "40km",
+    time: "5時間以内",
     difficulty: "★☆☆ 初心者向け",
     difficultyColor: "text-emerald-600",
-    description: "天草の玄関口・五橋を渡り、松島の絶景を巡る入門ルート。天草四郎サイクリングフェスタでも人気の定番コースです。",
+    description: "③⑥種目。天草の海岸線を気軽に楽しめる入門コース。家族・初心者・サイクリング体験したい方に最適。10:00スタート。",
     color: "from-sky-300 to-blue-500",
-    emoji: "🌉",
-    tag: "定番コース",
+    emoji: "🌱",
+    tag: "③⑥ 初心者",
   },
   {
     id: 2,
-    name: "崎津世界遺産コース",
+    name: "80km コース",
     distance: "80km",
-    time: "4〜5時間",
+    time: "7時間30分以内",
     difficulty: "★★☆ 中級者向け",
     difficultyColor: "text-amber-600",
-    description: "グランフォンドDay1・Day2の80kmコース。ユネスコ世界文化遺産の崎津集落を訪ねる。天草キリシタンの歴史と海の絶景が広がります。",
+    description: "②⑤種目。崎津世界遺産や天草の絶景を巡る中級コース。ユネスコ世界文化遺産・崎津集落を経由。8:30スタート。",
     color: "from-teal-400 to-cyan-600",
     emoji: "⛪",
-    tag: "グランフォンド80km",
+    tag: "②⑤ 中級",
   },
   {
     id: 3,
-    name: "天草一周フルコース",
-    distance: "152km",
-    time: "8〜10時間",
+    name: "140km コース",
+    distance: "140km",
+    time: "9時間以内",
     difficulty: "★★★ 上級者向け",
     difficultyColor: "text-red-600",
-    description: "ナショナルサイクルルートの全コース。宇城市三角駅をスタートし牛深港まで152km・所要10時間。道の駅さんぱーる・富岡港・崎津集落・牛深ハイヤ大橋など天草の全てを体感できます。",
+    description: "①④種目。天草一周グランフォンドの最長コース。天草全域を縦断する本格ロングライド。7:30スタート。定員各150名。",
     color: "from-violet-400 to-indigo-600",
-    emoji: "🌊",
-    tag: "ナショナルルート152km",
+    emoji: "🏆",
+    tag: "①④ 上級",
   },
 ];
 
@@ -483,7 +483,7 @@ export default function Home() {
                 グランフォンド コース紹介
               </h2>
               <p className="mt-3 text-slate-600">
-                あまいちグランフォンド2026の公式コース。初心者から上級者まで選べる3距離。
+                あまいちグランフォンド2026の公式コース。Day1（12/12）・Day2（12/13）各3種目。
               </p>
             </div>
 
