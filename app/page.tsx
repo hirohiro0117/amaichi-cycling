@@ -531,13 +531,26 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Day2コース補足 */}
+            {/* Day1・Day2コース補足 */}
             <div className="mt-6 rounded-2xl bg-white p-5 shadow-sm border border-ocean-100">
-              <p className="text-sm font-semibold text-ocean-700 mb-2">📋 Day2（12月13日）コース</p>
-              <div className="flex flex-wrap gap-3 text-sm text-slate-600">
-                <span className="rounded-full bg-ocean-50 px-3 py-1">🏆 140km（上級）</span>
-                <span className="rounded-full bg-teal-50 px-3 py-1">🚴 80km（中級）</span>
-                <span className="rounded-full bg-emerald-50 px-3 py-1">🌱 40km（初心者）</span>
+              <p className="text-sm font-semibold text-ocean-700 mb-3">📋 種目一覧</p>
+              <div className="space-y-3 text-sm text-slate-600">
+                <div>
+                  <p className="font-semibold text-slate-700 mb-1">Day1（12/12）</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="rounded-full bg-ocean-50 px-3 py-1">① 140km</span>
+                    <span className="rounded-full bg-teal-50 px-3 py-1">② 80km</span>
+                    <span className="rounded-full bg-emerald-50 px-3 py-1">③ 40km</span>
+                  </div>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-700 mb-1">Day2（12/13）</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="rounded-full bg-ocean-50 px-3 py-1">④ 140km</span>
+                    <span className="rounded-full bg-teal-50 px-3 py-1">⑤ 80km</span>
+                    <span className="rounded-full bg-emerald-50 px-3 py-1">⑥ 40km</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
