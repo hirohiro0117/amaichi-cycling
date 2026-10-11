@@ -28,7 +28,7 @@ export default function Header() {
             />
             <div>
               <div className="text-sm font-bold leading-tight text-ocean-900 sm:text-base">
-                あまいちサイクリングルート
+                NPO法人あまいち
               </div>
               <div className="text-xs text-ocean-500">Amaichi Cycling Club</div>
             </div>

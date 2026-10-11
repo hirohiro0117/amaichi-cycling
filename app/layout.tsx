@@ -9,12 +9,12 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "あまいちサイクリングルート | 天草をサイクリングで楽しもう",
+  title: "NPO法人あまいち | 天草をサイクリングで楽しもう",
   description:
     "熊本県天草地域のサイクリングルート情報。美しい海と自然を走るサイクリングルートの紹介やイベント参加申込。天草の魅力を自転車で体感しよう。",
-  keywords: "天草, サイクリング, 自転車, 熊本, あまいちサイクリングルート, ルート, イベント",
+  keywords: "天草, サイクリング, 自転車, 熊本, NPO法人あまいち, あまいちサイクリングルート, ルート, イベント",
   openGraph: {
-    title: "あまいちサイクリングルート",
+    title: "NPO法人あまいち",
     description: "天草を、自転車で楽しもう。",
     locale: "ja_JP",
     type: "website",

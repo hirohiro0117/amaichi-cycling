@@ -551,7 +551,7 @@ export default function Home() {
                 About
               </span>
               <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-                あまいちサイクリングルートとは
+                NPO法人あまいちとは
               </h2>
               <p className="mt-3 text-slate-600">
                 「天草一周（あまいち）」を合言葉に、2013年から活動するサイクリングルートガイドです。
@@ -947,7 +947,7 @@ export default function Home() {
                   className="h-10 w-10 rounded-full object-cover"
                 />
                 <div>
-                  <div className="font-bold text-white">あまいちサイクリングルート</div>
+                  <div className="font-bold text-white">NPO法人あまいち</div>
                   <div className="text-xs text-ocean-300">ナショナルサイクルルート</div>
                 </div>
               </div>
@@ -1011,13 +1011,13 @@ export default function Home() {
                 ))}
               </ul>
               <div className="mt-4 space-y-1">
-                <p className="text-xs text-ocean-400">運営：あまいちサイクリングルート</p>
+                <p className="text-xs text-ocean-400">運営：NPO法人あまいち</p>
               </div>
             </div>
           </div>
 
           <div className="mt-10 border-t border-ocean-800 pt-6 text-center text-xs text-ocean-500">
-            © 2026 あまいちサイクリングルート. All rights reserved.
+            © 2026 NPO法人あまいち. All rights reserved.
           </div>
         </div>
       </footer>
