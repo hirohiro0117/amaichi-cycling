@@ -1011,7 +1011,7 @@ export default function Home() {
                 ))}
               </ul>
               <div className="mt-4 space-y-1">
-                <p className="text-xs text-ocean-400">運営：あまいちサイクルルート</p>
+                <p className="text-xs text-ocean-400">運営：NPO法人あまいち</p>
               </div>
             </div>
           </div>
