@@ -235,7 +235,7 @@ export default function Home() {
               <p className="mb-8 text-sm text-ocean-100 sm:text-base">
                 2026年12月12日（土）・13日（日）開催
                 <span className="mx-2 text-ocean-300">|</span>
-                140km・80km・40km・30kmコース
+                140km・80km・40kmコース
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
                 <Link
@@ -483,7 +483,7 @@ export default function Home() {
                 グランフォンド コース紹介
               </h2>
               <p className="mt-3 text-slate-600">
-                あまいちグランフォンド2026の公式コース。初心者から上級者まで選べる4距離。
+                あまいちグランフォンド2026の公式コース。初心者から上級者まで選べる3距離。
               </p>
             </div>
 
@@ -537,7 +537,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-3 text-sm text-slate-600">
                 <span className="rounded-full bg-ocean-50 px-3 py-1">🏆 140km（上級）</span>
                 <span className="rounded-full bg-teal-50 px-3 py-1">🚴 80km（中級）</span>
-                <span className="rounded-full bg-emerald-50 px-3 py-1">🌱 30km（初心者）</span>
+                <span className="rounded-full bg-emerald-50 px-3 py-1">🌱 40km（初心者）</span>
               </div>
             </div>
           </div>
@@ -888,7 +888,7 @@ export default function Home() {
                 },
                 {
                   name: "グランフォンド エントリー（スポーツエントリー）",
-                  desc: "グランフォンド2026の参加申込ページ。140km・80km・40km・30km。",
+                  desc: "グランフォンド2026の参加申込ページ。140km・80km・40km。",
                   emoji: "📝",
                   color: "border-indigo-200 bg-indigo-50",
                   url: "https://www.sportsentry.ne.jp/event/t/106237",
